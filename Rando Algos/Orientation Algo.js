@@ -5,12 +5,16 @@ let c;
 function setup() {
   createCanvas(400, 400);
   a = new Point(1, 1);
-  b = new Point(3, 2);
-  c = new Point(2, 3);
+  b = new Point(2, 2);
+  c = new Point(0, 3);
   print(orientation(a, b, c));
 }
 
 function draw() {
+  
+  translate(0, height);
+  scale(1,-1);
+  
   background(220);
   circle(a.x,a.y, 20)
 }
