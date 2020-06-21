@@ -1,0 +1,11 @@
+NOTE THAT ALL BELOW INFORMATION ASSUMES A STANDARD CARTESIAN PLANE UNLIKE THE ONE IN P5.JS (IN P5.JS, DOWN IS ACTUALLY POSITVE AND NOT NEGATIVE)
+
+Objective: Create a covnex hull through connecting the minimum amount of points to encapsulate all points.
+
+Visual solution: The solution will be found going clockwise from a chosen starting point. In a complete convex hull, notice how every exterior angle is minimized. This method fo minimizing exterior angles will be our strategy. 
+
+Coded solution: The question is "How do we find out which point creates the smallest exterior angle?" The solution is cross-product. While cross-product is generally used for 3-D applications, the cross product of 2 vectors can tell us which vector creates a smaller exterior angle. 
+
+We firstly take two 2D vectors and transform them into 3D vectors with 0 in the z-component. 
+We then do a cross product and only read the output's z-compnent (x and y compnents should be 0). 
+Now, we assume that the angles are constructed in a clockwise rotation. If "z-compnent < 0", then the 1st vector creates a smaller exterior angle. If "z-compnent > 0", then the 2nd vector creates a smaller exterior angle. Note that we measure the angle going clockwise from a random line attatched to the shared point of both vectors. 
